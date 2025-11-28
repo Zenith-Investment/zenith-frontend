@@ -27,6 +27,7 @@ import { Button } from "@/components/ui/button";
 import { useAuthStore } from "@/stores/auth";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { NotificationCenter } from "@/components/notification-center";
+import { Logo } from "@/components/logo";
 
 const navigation = [
   {
@@ -116,10 +117,9 @@ export function Sidebar() {
   return (
     <aside className="flex h-full w-64 flex-col border-r bg-card" role="navigation" aria-label="Menu principal">
       {/* Logo */}
-      <div className="flex h-16 items-center gap-2 border-b px-6">
-        <Sparkles className="h-6 w-6 text-primary" aria-hidden="true" />
-        <span className="text-xl font-bold">Zenith</span>
-      </div>
+      <Link href="/dashboard" className="flex h-16 items-center border-b px-6">
+        <Logo width={120} height={32} className="transition-opacity hover:opacity-80" />
+      </Link>
 
       {/* Navigation */}
       <nav className="flex-1 space-y-1 p-4" aria-label="Navegacao principal">

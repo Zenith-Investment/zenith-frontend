@@ -1,15 +1,6 @@
 import type { Metadata, Viewport } from "next";
-// Temporarily disabled due to network issues in WSL2
-// import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
-
-// Fallback to system fonts during build
-// const inter = Inter({
-//   subsets: ["latin"],
-//   variable: "--font-sans",
-//   display: "swap",
-// });
 
 // SEO Metadata
 export const metadata: Metadata = {
@@ -244,16 +235,14 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         />
-        {/* Preconnect to important origins */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         {/* Favicons */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        {/* TODO: Create apple-touch-icon.png (180x180px) */}
+        {/* <link rel="apple-touch-icon" href="/apple-touch-icon.png" /> */}
         <link rel="manifest" href="/manifest.json" />
       </head>
-      <body className="font-sans antialiased">
+      <body className="antialiased" style={{ fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif' }}>
         <Providers>{children}</Providers>
       </body>
     </html>
