@@ -42,6 +42,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Logo } from "@/components/logo";
 
 // ============================================================================
 // ANIMATION VARIANTS
@@ -571,8 +572,7 @@ export default function HomePage() {
         <div className="container flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <Sparkles className="h-7 w-7 text-primary" />
-            <span className="text-xl font-bold">Zenith</span>
+            <Logo width={120} height={32} />
           </Link>
 
           {/* Desktop Navigation */}
@@ -1544,8 +1544,7 @@ export default function HomePage() {
             {/* Brand */}
             <div className="lg:col-span-1">
               <Link href="/" className="flex items-center gap-2 mb-4">
-                <Sparkles className="h-6 w-6 text-primary" />
-                <span className="text-lg font-bold">Zenith</span>
+                <Logo width={100} height={27} />
               </Link>
               <p className="text-sm text-muted-foreground">
                 Inteligência artificial para investidores brasileiros.
